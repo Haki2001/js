@@ -24,7 +24,7 @@
         
         /* Animated gradient background */
         .gradient-bg {
-            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
+            background: linear-gradient(-45deg, #1e3a8a, #3730a3, #1e40af, #2563eb);
             background-size: 400% 400%;
             animation: gradientShift 15s ease infinite;
             position: relative;
@@ -65,7 +65,7 @@
         }
         
         @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            0% { transform: translateY(100%) rotate(0deg); opacity: 0; }
             10% { opacity: 1; }
             90% { opacity: 1; }
             100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
@@ -105,7 +105,7 @@
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            background: linear-gradient(45deg, #ea580c, #f97316);
             border: none;
             cursor: pointer;
         }
@@ -127,7 +127,7 @@
         
         .cta-button:hover {
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(255,107,53,0.4);
+            box-shadow: 0 15px 30px rgba(249,115,22,0.4);
         }
         
         .cta-button:active {
@@ -137,7 +137,7 @@
         /* Typing animation */
         .typing-text {
             overflow: hidden;
-            border-right: 3px solid rgba(255,255,255,0.75);
+            border-left: 3px solid rgba(255,255,255,0.75);
             white-space: nowrap;
             animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
         }
@@ -243,7 +243,7 @@
             left: 100%;
             width: 50px;
             height: 2px;
-            background: linear-gradient(90deg, #667eea, transparent);
+            background: linear-gradient(90deg, #1e40af, transparent);
             transform: translateY(-50%);
         }
         
@@ -268,9 +268,9 @@
         }
         
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(255, 107, 53, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
         }
         
         /* Loading animation */
@@ -295,11 +295,16 @@
             100% { left: 100%; }
         }
         
+        /* Progress bar animation */
+        @keyframes progressBar {
+            from { width: 0%; }
+        }
+        
         /* Responsive enhancements */
         @media (max-width: 768px) {
             .typing-text {
                 animation: none;
-                border-right: none;
+                border-left: none;
                 white-space: normal;
             }
         }
@@ -369,7 +374,7 @@
     <div class="absolute top-0 left-0 w-full h-full opacity-5">
      <svg class="w-full h-full" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs>
        <pattern id="grid" width="10" height="10" patternunits="userSpaceOnUse">
-        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#667eea" stroke-width="0.5" />
+        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#1e40af" stroke-width="0.5" />
        </pattern>
       </defs> <rect width="100" height="100" fill="url(#grid)" />
      </svg>
@@ -438,11 +443,11 @@
    </section><!-- Course Content Section -->
    <section class="py-20 px-6 bg-white">
     <div class="max-w-6xl mx-auto">
-     <h2 id="content-title" class="text-4xl font-bold text-center mb-16 text-gray-800">محتوى الدورة</h2>
+     <h2 id="content-title" class="text-4xl font-bold text-center mb-16 text-gray-800 reveal">محتوى الدورة</h2>
      <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div>
+      <div class="reveal">
        <div class="space-y-6">
-        <div class="flex items-start space-x-4 space-x-reverse">
+        <div class="flex items-start space-x-4 space-x-reverse progress-step">
          <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold text-sm">
           1
          </div>
@@ -451,7 +456,7 @@
           <p class="text-gray-600">المتغيرات، الشروط، الحلقات وأساسيات التفكير البرمجي</p>
          </div>
         </div>
-        <div class="flex items-start space-x-4 space-x-reverse">
+        <div class="flex items-start space-x-4 space-x-reverse progress-step">
          <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-semibold text-sm">
           2
          </div>
@@ -460,7 +465,7 @@
           <p class="text-gray-600">تعلم لغة Python من البداية حتى المستوى المتقدم</p>
          </div>
         </div>
-        <div class="flex items-start space-x-4 space-x-reverse">
+        <div class="flex items-start space-x-4 space-x-reverse progress-step">
          <div class="w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-semibold text-sm">
           3
          </div>
@@ -469,7 +474,7 @@
           <p class="text-gray-600">بناء مواقع تفاعلية وتطبيقات ويب حديثة</p>
          </div>
         </div>
-        <div class="flex items-start space-x-4 space-x-reverse">
+        <div class="flex items-start space-x-4 space-x-reverse progress-step">
          <div class="w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center font-semibold text-sm">
           4
          </div>
@@ -480,7 +485,7 @@
         </div>
        </div>
       </div>
-      <div class="code-block rounded-xl p-8 text-green-400 font-mono text-sm relative"><!-- Terminal header -->
+      <div class="code-block rounded-xl p-8 text-green-400 font-mono text-sm relative reveal"><!-- Terminal header -->
        <div class="flex items-center justify-between mb-6 pb-4 border-b border-gray-700">
         <div class="flex items-center space-x-2 space-x-reverse">
          <div class="w-3 h-3 bg-red-500 rounded-full"></div>
@@ -518,7 +523,7 @@
    </section><!-- Testimonials Section -->
    <section class="py-20 px-6 bg-blue-50">
     <div class="max-w-6xl mx-auto">
-     <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">ماذا يقول طلابنا؟</h2>
+     <h2 class="text-4xl font-bold text-center mb-16 text-gray-800 reveal">ماذا يقول طلابنا؟</h2>
      <div class="grid md:grid-cols-3 gap-8">
       <div class="testimonial-card bg-white p-8 rounded-xl shadow-md reveal relative overflow-hidden" style="animation-delay: 0.1s;">
        <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-400/10 to-transparent rounded-full -mr-10 -mt-10"></div>
@@ -588,11 +593,11 @@
    </section><!-- Final CTA Section -->
    <section class="gradient-bg text-white py-20 px-6">
     <div class="max-w-4xl mx-auto text-center">
-     <h2 id="final-cta" class="text-4xl md:text-5xl font-bold mb-8">جاهز للبدء؟ انضم إلى آلاف الطلاب الآن!</h2>
-     <p class="text-xl mb-8 opacity-90">لا تفوت الفرصة وابدأ رحلتك في عالم البرمجة اليوم</p>
-     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center"><button class="cta-button bg-orange-500 hover:bg-orange-600 text-white px-12 py-4 rounded-full text-xl font-semibold shadow-lg"> سجل مجانًا الآن </button> <button class="bg-transparent border-2 border-white text-white px-12 py-4 rounded-full text-xl font-semibold hover:bg-white hover:text-blue-600 transition-all"> تعرف على المزيد </button>
+     <h2 id="final-cta" class="text-4xl md:text-5xl font-bold mb-8 reveal">جاهز للبدء؟ انضم إلى آلاف الطلاب الآن!</h2>
+     <p class="text-xl mb-8 opacity-90 reveal">لا تفوت الفرصة وابدأ رحلتك في عالم البرمجة اليوم</p>
+     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center reveal"><button class="cta-button bg-orange-500 hover:bg-orange-600 text-white px-12 py-4 rounded-full text-xl font-semibold shadow-lg"> ابدأ التعلم مجانًا </button> <button class="bg-transparent border-2 border-white text-white px-12 py-4 rounded-full text-xl font-semibold hover:bg-white hover:text-blue-600 transition-all"> تعرف على المزيد </button>
      </div>
-     <div class="mt-12 text-sm opacity-80">
+     <div class="mt-12 text-sm opacity-80 reveal">
       ✅ بدء فوري • ✅ ضمان استرداد المال • ✅ دعم مدى الحياة
      </div>
     </div>
@@ -643,11 +648,11 @@
             features_title: "ماذا ستتعلم في LearnCode Pro؟",
             content_title: "محتوى الدورة",
             final_cta: "جاهز للبدء؟ انضم إلى آلاف الطلاب الآن!",
-            background_color: "#667eea",
+            background_color: "#1e3a8a",
             surface_color: "#ffffff",
             text_color: "#1f2937",
             primary_action_color: "#f97316",
-            secondary_action_color: "#6366f1",
+            secondary_action_color: "#3730a3",
             font_family: "Cairo",
             font_size: 16
         };
@@ -670,7 +675,7 @@
 
             // Apply background color to gradient sections
             document.querySelectorAll('.gradient-bg').forEach(el => {
-                el.style.background = `linear-gradient(135deg, ${backgroundColor} 0%, ${secondaryActionColor} 100%)`;
+                el.style.background = `linear-gradient(-45deg, ${backgroundColor}, ${secondaryActionColor}, #1e40af, #2563eb)`;
             });
 
             // Apply surface color to cards and white sections
@@ -685,7 +690,7 @@
 
             // Apply primary action color to CTA buttons
             document.querySelectorAll('.cta-button').forEach(el => {
-                el.style.backgroundColor = primaryActionColor;
+                el.style.background = `linear-gradient(45deg, ${primaryActionColor}, #ea580c)`;
             });
 
             // Update font
@@ -872,13 +877,6 @@
             }
         }
 
-        // Smooth scrolling for navigation
-        function smoothScroll(target) {
-            document.querySelector(target).scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-
         // Interactive button effects
         function addButtonEffects() {
             document.querySelectorAll('.cta-button').forEach(button => {
@@ -909,7 +907,7 @@
                         
                         setTimeout(() => {
                             button.textContent = originalText;
-                            button.style.background = 'linear-gradient(45deg, #ff6b35, #f7931e)';
+                            button.style.background = 'linear-gradient(45deg, #f97316, #ea580c)';
                             button.classList.remove('loading');
                             button.disabled = false;
                             ripple.remove();
@@ -917,22 +915,6 @@
                     }, 1500);
                 });
             });
-        }
-
-        // Typing effect for hero title
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            
-            type();
         }
 
         // Initialize all animations and effects
@@ -997,8 +979,24 @@
             document.head.appendChild(style);
         }
 
+        // Typing effect for hero title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            
+            type();
+        }
+
         // Initialize everything
         initializeEffects();
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'995d3f00d5d7ae11',t:'MTc2MTY4NDAwNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'995d5a22f026ae11',t:'MTc2MTY4NTExNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
